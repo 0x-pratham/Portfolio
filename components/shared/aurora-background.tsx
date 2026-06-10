@@ -1,0 +1,52 @@
+export function AuroraBackground() {
+  return (
+    <div
+      aria-hidden="true"
+      className="
+        pointer-events-none
+        absolute
+        inset-0
+        overflow-hidden
+      "
+    >
+      <div
+        className="
+          absolute
+          left-[-10%]
+          top-[10%]
+          h-[400px]
+          w-[400px]
+          rounded-full
+          bg-violet-600/20
+          blur-[120px]
+        "
+      />
+
+      <div
+        className="
+          absolute
+          right-[-10%]
+          top-[20%]
+          h-[400px]
+          w-[400px]
+          rounded-full
+          bg-cyan-500/20
+          blur-[120px]
+        "
+      />
+
+      <div
+        className="
+          absolute
+          bottom-[-10%]
+          left-[30%]
+          h-[350px]
+          w-[350px]
+          rounded-full
+          bg-indigo-500/20
+          blur-[120px]
+        "
+      />
+    </div>
+  );
+}
