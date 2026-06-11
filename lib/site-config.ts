@@ -1,28 +1,32 @@
 export const siteConfig = {
   name: "Prathamesh Bhil",
 
-  shortName: "Prathamesh",
+  title:
+    "Prathamesh Bhil — Founder, Engineer & Builder",
 
   description:
-    "Founder & CEO of Cosmolix Pvt Ltd. Building software, security, and innovation through modern technology.",
+    "Official portfolio of Prathamesh Bhil, Founder & CEO of Cosmolix Pvt Ltd. Software Engineer, Cybersecurity Enthusiast, Researcher and Technology Leader.",
 
-  url: "https://prathameshbhil.com",
+  url:
+    "https://prathameshbhil.com",
 
-  ogImage: "/og/og-image.jpg",
+  ogImage:
+    "/images/og-image.jpg",
 
   author: {
     name: "Prathamesh Bhil",
-    email: "contact@prathameshbhil.com",
   },
 
   company: {
     name: "Cosmolix Pvt Ltd",
-    website: "https://cosmolix.co.in",
+    url: "https://cosmolix.co.in",
   },
 
-  socials: {
-    github: "",
-    linkedin: "",
-    twitter: "",
+  socialLinks: {
+    github:
+      "https://github.com/0x-pratham",
+
+    linkedin:
+      "https://www.linkedin.com/in/prathamesh-bhil-5a74ba415/",
   },
-} as const;
+};

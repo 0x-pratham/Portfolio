@@ -1,86 +1,160 @@
 import Link from "next/link";
 
 import { projects } from "@/data/projects";
+import Image from "next/image";
 
 export function FeaturedProjects() {
   return (
     <section
       id="projects"
-      className="py-24"
+      className="section-padding"
     >
       <div className="container-custom">
         <div className="mb-16">
-          <p className="mb-4 text-sm uppercase tracking-[0.2em] text-violet-400">
+          <p
+  className="
+    mb-6
+    text-sm
+    uppercase
+    tracking-[0.35em]
+    text-accent
+  "
+>
             Projects
           </p>
 
-          <h2 className="text-4xl font-bold md:text-5xl">
+          <h2
+  className="
+    text-5xl
+    font-light
+    leading-none
+    md:text-6xl
+  "
+>
             Featured Work
           </h2>
         </div>
 
-        <div className="grid gap-8 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
           {projects.map((project) => (
             <article
-              key={project.id}
+              key={project.slug}
               className="
-                group
-                rounded-3xl
-                border
-                border-white/10
-                bg-white/[0.02]
-                p-6
-                transition-all
-                duration-300
-                hover:-translate-y-2
-                hover:border-violet-500/40
-              "
+  group
+  rounded-[2rem]
+  border
+  border-[var(--border)]
+  bg-[var(--surface)]
+  p-8
+  transition-all
+  duration-700
+  hover:-translate-y-2
+  hover:border-[var(--accent)]
+"
             >
+
+              <div
+  className="
+    mb-8
+    overflow-hidden
+    rounded-[1.5rem]
+    border
+    border-[var(--border)]
+  "
+>
+  <Image
+    src={project.image}
+    alt={project.title}
+    width={800}
+    height={600}
+    className="
+      h-[220px]
+      w-full
+      object-cover
+      transition-transform
+      duration-700
+      group-hover:scale-[1.08]
+      group-hover:brightness-105
+    "
+  />
+</div>
               <span
                 className="
-                  mb-4
-                  inline-block
-                  rounded-full
-                  border
-                  border-violet-500/20
-                  px-3
-                  py-1
-                  text-xs
-                "
+  mb-6
+  inline-block
+  text-xs
+  uppercase
+  tracking-[0.25em]
+  text-accent
+"
               >
                 {project.category}
               </span>
 
-              <h3 className="mb-4 text-2xl font-bold">
+              <h3 className="mb-4 text-3xl font-light transition-colors
+duration-500
+group-hover:text-[var(--accent)]">
                 {project.title}
               </h3>
 
-              <p className="mb-6 text-slate-400">
-                {project.description}
+              <p className="mb-6 text-muted
+leading-relaxed">
+                {project.longDescription}
               </p>
 
-              <div className="mb-6 flex flex-wrap gap-2">
-                {project.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="
-                      rounded-full
-                      bg-white/5
-                      px-3
-                      py-1
-                      text-xs
-                    "
-                  >
-                    {tech}
-                  </span>
-                ))}
+              <div className="mb-6">
+  <p
+    className="
+      mb-2
+      text-xs
+      uppercase
+      tracking-[0.25em]
+      text-muted
+    "
+  >
+    Outcome
+  </p>
+
+  <p
+    className="
+      text-accent
+      leading-relaxed
+    "
+  >
+    {project.results[0]}
+  </p>
+</div>
+
+              <div className="mb-6">
+                <p
+  className="
+    mono
+    mb-6
+    text-xs
+    text-muted
+  "
+>
+  {project.technologies.join(" · ")}
+</p>
               </div>
 
               <Link
-                href={project.href}
-                className="text-violet-400"
+                href={`/projects/${project.slug}`}
+                className="
+  relative
+  inline-block
+  text-accent
+"
               >
-                View Project →
+                View Project <span
+  className="
+    transition-transform
+    duration-500
+    group-hover:translate-x-1
+  "
+>
+  →
+</span>
               </Link>
             </article>
           ))}
