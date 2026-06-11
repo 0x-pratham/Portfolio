@@ -1,34 +1,22 @@
 import type { Metadata } from "next";
+
 import { siteConfig } from "./site-config";
 
 export const defaultMetadata: Metadata = {
-  metadataBase: new URL(siteConfig.url),
+  metadataBase: new URL(
+    siteConfig.url
+  ),
 
   title: {
     default:
-      "Prathamesh Bhil | Founder & CEO of Cosmolix Pvt Ltd",
-    template: "%s | Prathamesh Bhil",
+      siteConfig.title,
+
+    template:
+      "%s | Prathamesh Bhil",
   },
 
-  description: siteConfig.description,
-
-  keywords: [
-    "Prathamesh Bhil",
-    "Cosmolix",
-    "Founder",
-    "CEO",
-    "Software Engineer",
-    "Cybersecurity",
-    "Full Stack Developer",
-  ],
-
-  authors: [
-    {
-      name: siteConfig.author.name,
-    },
-  ],
-
-  creator: siteConfig.author.name,
+  description:
+    siteConfig.description,
 
   robots: {
     index: true,
@@ -36,27 +24,56 @@ export const defaultMetadata: Metadata = {
   },
 
   openGraph: {
-    type: "website",
-    locale: "en_US",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title:
-      "Prathamesh Bhil | Founder & CEO of Cosmolix Pvt Ltd",
-    description: siteConfig.description,
-    images: [
-      {
-        url: siteConfig.ogImage,
-        width: 1200,
-        height: 630,
-      },
-    ],
-  },
+  type: "website",
+  locale: "en_US",
+  url: siteConfig.url,
+  siteName: siteConfig.title,
+  title: siteConfig.title,
+  description: siteConfig.description,
+  images: [
+    {
+      url: siteConfig.ogImage,
+      width: 1200,
+      height: 630,
+      alt: siteConfig.title,
+    },
+  ],
+},
 
   twitter: {
-    card: "summary_large_image",
-    title:
-      "Prathamesh Bhil | Founder & CEO of Cosmolix Pvt Ltd",
-    description: siteConfig.description,
-    images: [siteConfig.ogImage],
+  card: "summary_large_image",
+  title: siteConfig.title,
+  description: siteConfig.description,
+  creator: "@YOUR_HANDLE",
+  images: [siteConfig.ogImage],
+},
+
+  keywords: [
+  "Prathamesh Bhil",
+  "Software Engineer",
+  "Founder",
+  "Cosmolix",
+  "GenXCode",
+  "Cybersecurity",
+  "Full Stack Developer",
+  "Technology Entrepreneur",
+  "Web Developer",
+  "Next.js Developer",
+],
+
+authors: [
+  {
+    name: "Prathamesh Bhil",
+    url: siteConfig.url,
   },
+],
+
+creator: "Prathamesh Bhil",
+publisher: "Prathamesh Bhil",
+alternates: {
+  canonical: siteConfig.url,
+},  
+
+themeColor: "#0D0D0D",
+category: "Technology",
 };

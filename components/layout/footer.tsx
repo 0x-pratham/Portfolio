@@ -2,73 +2,168 @@ import Link from "next/link";
 
 export function Footer() {
   return (
-    <footer className="border-t border-white/10 py-12">
-      <div
-        className="
-          container-custom
-          grid
-          gap-12
-          md:grid-cols-3
-        "
-      >
-        <div>
-          <h3 className="mb-4 text-xl font-bold">
-            Prathamesh Bhil
-          </h3>
+    <footer
+      className="
+        border-t
+        border-[var(--border)]
+        py-24
+      "
+    >
+      <div className="container-custom">
+        {/* Brand */}
 
-          <p className="text-slate-400">
-            Founder & CEO at Cosmolix Pvt Ltd.
+        <p
+          className="
+            mb-6
+            text-sm
+            uppercase
+            tracking-[0.35em]
+            text-accent
+          "
+        >
+          Prathamesh Bhil
+        </p>
+
+        <h2
+          className="
+            max-w-4xl
+            text-4xl
+            font-light
+            leading-tight
+            md:text-5xl
+          "
+        >
+          Building software,
+          leading communities,
+          and creating technology
+          that solves real-world problems.
+        </h2>
+
+        <p
+          className="
+            mt-6
+            max-w-2xl
+            text-muted
+            leading-relaxed
+          "
+        >
+          Founder of Cosmolix Pvt Ltd,
+          creator of GenXCode, and
+          passionate about software
+          engineering, cybersecurity
+          and innovation.
+        </p>
+
+        {/* Navigation */}
+
+        <div
+          className="
+            mt-20
+            flex
+            flex-wrap
+            gap-8
+            text-sm
+            uppercase
+            tracking-[0.15em]
+          "
+        >
+          <Link
+            href="/"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            Home
+          </Link>
+
+          <Link
+            href="/about"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            About
+          </Link>
+
+          <Link
+            href="/projects"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            Projects
+          </Link>
+
+          <Link
+            href="/blog"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            Blog
+          </Link>
+
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            LinkedIn
+          </a>
+
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            className="
+              text-muted
+              transition-colors
+              duration-500
+              hover:text-accent
+            "
+          >
+            GitHub
+          </a>
+        </div>
+
+        {/* Bottom */}
+
+        <div
+          className="
+            mt-20
+            border-t
+            border-[var(--border)]
+            pt-8
+          "
+        >
+          <p
+            className="
+              text-sm
+              text-muted
+            "
+          >
+            © {new Date().getFullYear()} Prathamesh Bhil.
+            All rights reserved.
           </p>
         </div>
-
-        <div>
-          <h4 className="mb-4 font-semibold">
-            Navigation
-          </h4>
-
-          <div className="flex flex-col gap-3">
-            <Link href="/">Home</Link>
-            <Link href="/about">About</Link>
-            <Link href="/projects">Projects</Link>
-            <Link href="/blog">Blog</Link>
-          </div>
-        </div>
-
-        <div>
-          <h4 className="mb-4 font-semibold">
-            Connect
-          </h4>
-
-          <div className="flex flex-col gap-3">
-            <a
-              href="https://linkedin.com"
-              target="_blank"
-            >
-              LinkedIn
-            </a>
-
-            <a
-              href="https://github.com"
-              target="_blank"
-            >
-              GitHub
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <div
-        className="
-          container-custom
-          mt-12
-          border-t
-          border-white/10
-          pt-8
-          text-sm
-          text-slate-500
-        "
-      >
-        © {new Date().getFullYear()} Prathamesh Bhil.
       </div>
     </footer>
   );

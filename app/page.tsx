@@ -2,8 +2,11 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 import { Hero } from "@/components/sections/hero";
-import { SocialProof } from "@/components/sections/social-proof";
 import { AboutPreview } from "@/components/sections/about-preview";
+import { FeaturedProjects } from "@/components/sections/featured-projects";
+import { SkillsEcosystem } from "@/components/sections/skills-ecosystem";
+
+import { ContactCTA } from "@/components/sections/contact-cta";
 
 export default function HomePage() {
   return (
@@ -11,10 +14,16 @@ export default function HomePage() {
       <Navbar />
 
       <main>
-        <Hero />
-        <SocialProof />
-        <AboutPreview />
-      </main>
+  <Hero />
+
+  <AboutPreview />
+
+  <SkillsEcosystem />
+
+  <FeaturedProjects />
+
+  <ContactCTA />
+</main>
 
       <Footer />
     </>
