@@ -12,7 +12,7 @@ export function ContactCTA() {
             Let's Build Something Meaningful
           </h2>
 
-          <p className="mx-auto mb-12 max-w-2xl text-slate-400">
+          <p className="mx-auto mb-12 max-w-2xl text-[var(--warm-grey)]">
             Whether you're building a product, scaling a business, or exploring new ideas, 
             I'd be happy to connect and collaborate.
           </p>

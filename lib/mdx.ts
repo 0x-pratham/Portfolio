@@ -35,10 +35,16 @@ export function getAllPosts() {
     } = matter(source);
 
     return {
-      slug,
-      frontmatter: data,
-      content,
-    };
+  slug,
+  frontmatter: {
+    ...data,
+    date:
+      data.date instanceof Date
+        ? data.date.toISOString().split("T")[0]
+        : String(data.date),
+  },
+  content,
+};
   });
 }
 

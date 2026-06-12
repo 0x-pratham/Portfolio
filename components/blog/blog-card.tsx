@@ -20,27 +20,69 @@ export function BlogCard({
     <Link
       href={`/blog/${slug}`}
       className="
-        block
-        rounded-3xl
-        border
-        border-white/10
-        bg-white/[0.03]
-        p-8
-        transition
-        hover:border-violet-500/40
-      "
+group
+relative
+block
+overflow-hidden
+rounded-3xl
+border
+border-[var(--border)]
+bg-[var(--surface)]
+p-10 md:p-12
+transition-all
+duration-500
+hover:-translate-y-2
+hover:border-[var(--accent)]
+"
     >
-      <p className="mb-3 text-sm text-violet-400">
-        {date}
+    <p className="mb-4 text-sm uppercase tracking-[0.2em] text-[var(--accent)]">
+        {new Date(date).toLocaleDateString("en-US", {
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+})}
       </p>
 
-      <h2 className="mb-4 text-2xl font-bold">
+      <h2 className="
+mb-5
+font-[var(--font-cormorant)]
+text-3xl
+font-light
+leading-tight
+transition-colors
+duration-300
+group-hover:text-[var(--accent)]
+">
         {title}
       </h2>
 
-      <p className="text-slate-400">
+      <p className="leading-relaxed text-[var(--warm-grey)]">
         {description}
       </p>
+
+      <div
+  className="
+  mt-8
+  flex
+  items-center
+  gap-2
+  text-sm
+  font-medium
+  text-[var(--accent)]
+  "
+>
+  <span>Read Article</span>
+
+  <span
+    className="
+    transition-transform
+    duration-300
+    group-hover:translate-x-1
+    "
+  >
+    →
+  </span>
+</div>
     </Link>
   );
 }
