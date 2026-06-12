@@ -28,24 +28,15 @@ export default function BlogPage() {
           </h1>
 
           <div className="grid gap-8">
-            {posts.map((post) => (
-              <BlogCard
-                key={post.slug}
-                slug={post.slug}
-                title={
-                  post.frontmatter
-                    .title
-                }
-                description={
-                  post.frontmatter
-                    .description
-                }
-                date={
-                  post.frontmatter
-                    .date
-                }
-              />
-            ))}
+            {posts.map((post: any) => (
+  <BlogCard
+    key={post.slug}
+    slug={post.slug}
+    title={post.frontmatter.title}
+    description={post.frontmatter.description}
+    date={post.frontmatter.date}
+  />
+))}
           </div>
         </div>
       </main>
