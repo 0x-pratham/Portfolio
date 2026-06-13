@@ -44,7 +44,8 @@ export const defaultMetadata: Metadata = {
   card: "summary_large_image",
   title: siteConfig.title,
   description: siteConfig.description,
-  creator: "@YOUR_HANDLE",
+  creator: "@0x_Pratham",
+  site: "@0x_Pratham",
   images: [siteConfig.ogImage],
 },
 
@@ -59,6 +60,18 @@ export const defaultMetadata: Metadata = {
   "Technology Entrepreneur",
   "Web Developer",
   "Next.js Developer",
+  "Cyber Security Researcher",
+"Founder & CEO",
+"React Developer",
+"TypeScript Developer",
+"Penetration Tester",
+"Ethical Hacker",
+"Software Architect",
+"India",
+"Nagpur",
+"Pune",
+"JSPM University",
+"Ajeenkya DY Patil University",
 ],
 
 authors: [

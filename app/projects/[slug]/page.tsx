@@ -53,7 +53,8 @@ export default async function ProjectPage({
     <>
       <Navbar />
 
-      <main className="py-24">
+      <main className="pt-10 pb-24">
+        <div className="container-custom">
         {/* Hero */}
 
 <div className="max-w-5xl">
@@ -374,6 +375,7 @@ export default async function ProjectPage({
   </div>
 
 </section>
+</div>
       </main>
 
       <Footer />

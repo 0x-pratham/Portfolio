@@ -12,9 +12,9 @@ import { ContactCTA } from "@/components/sections/contact-cta";
 import { FutureVision } from "@/components/sections/future-vision";
 
 export const metadata: Metadata = {
-  title: "About | Prathamesh Bhil",
+  title: "About",
   description:
-    "Learn about Prathamesh Bhil, Founder & CEO of Cosmolix Pvt Ltd.",
+    "Learn about Prathamesh Bhil, Founder & CEO of Cosmolix Pvt Ltd, creator of GenXCode, software engineer, researcher, and technology leader.",
 };
 
 export default function AboutPage() {

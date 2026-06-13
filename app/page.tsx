@@ -7,6 +7,9 @@ import { FeaturedProjects } from "@/components/sections/featured-projects";
 import { SkillsEcosystem } from "@/components/sections/skills-ecosystem";
 
 import { ContactCTA } from "@/components/sections/contact-cta";
+import { Metrics } from "@/components/sections/metrics";
+import { AchievementGrid } from "@/components/sections/achievement-grid";
+import { ResearchPreview } from "@/components/sections/research-preview";
 
 export default function HomePage() {
   return (
@@ -16,11 +19,17 @@ export default function HomePage() {
       <main>
   <Hero />
 
+  <Metrics />
+
   <AboutPreview />
 
-  <SkillsEcosystem />
+  <AchievementGrid />
 
   <FeaturedProjects />
+
+  <ResearchPreview />
+
+  <SkillsEcosystem />
 
   <ContactCTA />
 </main>

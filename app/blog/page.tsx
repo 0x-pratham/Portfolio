@@ -8,7 +8,7 @@ import { BlogCard } from "@/components/blog/blog-card";
 import { getAllPosts } from "@/lib/mdx";
 
 export const metadata: Metadata = {
-  title: "Blog | Prathamesh Bhil",
+  title: "Blog",
 
   description:
     "Technology, cybersecurity and startup insights by Prathamesh Bhil.",

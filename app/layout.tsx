@@ -75,7 +75,11 @@ export default function RootLayout({
       sameAs: [
         "https://github.com/0x-pratham",
 
-        "https://www.linkedin.com/in/prathamesh-bhil-5a74ba415/",
+        "https://www.linkedin.com/in/prathamesh-bhil-52408638b/",
+        
+        "https://x.com/0x_Pratham",
+
+        "https://www.instagram.com/0x_pratham/",
       ],
     }),
   }}

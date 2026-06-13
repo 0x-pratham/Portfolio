@@ -1,7 +1,6 @@
 import Link from "next/link";
 
 import { projects } from "@/data/projects";
-import Image from "next/image";
 
 export function FeaturedProjects() {
   return (
@@ -10,33 +9,71 @@ export function FeaturedProjects() {
       className="section-padding"
     >
       <div className="container-custom">
-        <div className="mb-16">
-          <p
+        <div
   className="
-    mb-6
-    text-sm
-    uppercase
-    tracking-[0.35em]
-    text-accent
+    mb-16
+    flex
+    flex-col
+    gap-8
+    md:flex-row
+    md:items-end
+    md:justify-between
   "
 >
-            Projects
-          </p>
+  <div>
+    <p
+      className="
+        mb-4
+        text-sm
+        uppercase
+        tracking-[0.35em]
+        text-accent
+      "
+    >
+      Selected Work
+    </p>
 
-          <h2
-  className="
-    text-5xl
-    font-light
-    leading-none
-    md:text-6xl
-  "
->
-            Featured Work
-          </h2>
-        </div>
+    <h2
+      className="
+        font-[var(--font-cormorant)]
+        text-5xl
+        font-light
+        md:text-7xl
+      "
+    >
+      Projects &
+      Innovation
+    </h2>
+
+    <p
+      className="
+        mt-4
+        max-w-xl
+        text-muted
+      "
+    >
+      Software products, cybersecurity
+      initiatives, research projects,
+      and community platforms.
+    </p>
+  </div>
+
+  <Link
+    href="/projects"
+    className="
+      text-accent
+      uppercase
+      tracking-[0.2em]
+      transition-all
+      hover:translate-x-1
+    "
+  >
+    View All Projects →
+  </Link>
+</div>
 
         <div className="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
-          {projects.map((project) => (
+          {projects.slice(0, 3).map((project) => (
             <article
               key={project.slug}
               className="
@@ -53,31 +90,6 @@ export function FeaturedProjects() {
 "
             >
 
-              <div
-  className="
-    mb-8
-    overflow-hidden
-    rounded-[1.5rem]
-    border
-    border-[var(--border)]
-  "
->
-  <Image
-    src={project.image}
-    alt={project.title}
-    width={800}
-    height={600}
-    className="
-      h-[220px]
-      w-full
-      object-cover
-      transition-transform
-      duration-700
-      group-hover:scale-[1.08]
-      group-hover:brightness-105
-    "
-  />
-</div>
               <span
                 className="
   mb-6

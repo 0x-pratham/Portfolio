@@ -2,24 +2,48 @@ import type { Metadata } from "next";
 
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-
 import { ContactForm } from "@/components/contact/contact-form";
+
+import { siteConfig } from "@/lib/site-config";
 
 import {
   FaGithub,
   FaLinkedinIn,
   FaInstagram,
-  FaXTwitter,
-} from "react-icons/fa6";
+} from "react-icons/fa";
+
+import { FaXTwitter } from "react-icons/fa6";
 
 export const metadata: Metadata = {
-  title: "Contact | Prathamesh Bhil",
-
+  title: "Contact",
   description:
-    "Get in touch with Prathamesh Bhil, Founder & CEO of Cosmolix Pvt Ltd.",
+    "Connect with Prathamesh Bhil, Founder & CEO of Cosmolix Pvt Ltd.",
 };
 
 export default function ContactPage() {
+  const socials = [
+    {
+      label: "LinkedIn",
+      href: siteConfig.socialLinks.linkedin,
+      icon: FaLinkedinIn,
+    },
+    {
+      label: "GitHub",
+      href: siteConfig.socialLinks.github,
+      icon: FaGithub,
+    },
+    {
+      label: "X",
+      href: siteConfig.socialLinks.twitter,
+      icon: FaXTwitter,
+    },
+    {
+      label: "Instagram",
+      href: siteConfig.socialLinks.instagram,
+      icon: FaInstagram,
+    },
+  ];
+
   return (
     <>
       <Navbar />
@@ -29,15 +53,15 @@ export default function ContactPage() {
 
           {/* Hero */}
 
-          <div className="mb-24 max-w-5xl">
+          <div className="max-w-5xl">
 
             <p
               className="
-              mb-4
-              text-sm
-              uppercase
-              tracking-[0.35em]
-              text-[var(--accent)]
+                mb-4
+                text-sm
+                uppercase
+                tracking-[0.35em]
+                text-[var(--accent)]
               "
             >
               Contact
@@ -45,239 +69,144 @@ export default function ContactPage() {
 
             <h1
               className="
-              font-[var(--font-cormorant)]
-              text-6xl
-              font-light
-              leading-[0.95]
-              md:text-8xl
+                font-[var(--font-cormorant)]
+                text-6xl
+                font-light
+                leading-[0.95]
+                md:text-8xl
               "
             >
-              Let's Start A
-              Conversation.
+              Let's Build
+              Something Meaningful.
             </h1>
 
             <p
               className="
-              mt-10
-              max-w-3xl
-              text-xl
-              leading-relaxed
-              text-[var(--warm-grey)]
+                mt-10
+                max-w-3xl
+                text-xl
+                leading-relaxed
+                text-[var(--warm-grey)]
               "
             >
-              Whether you're looking to build a
-              product, collaborate on a project,
-              discuss technology, explore
-              entrepreneurship or create
-              meaningful opportunities, I'd love
-              to hear from you.
+              I'm always open to discussing
+              technology, startups, research,
+              cybersecurity, collaborations,
+              and innovative ideas that create
+              real-world impact.
             </p>
 
           </div>
 
-          {/* Content */}
+          {/* Main Content */}
 
           <div
             className="
-            grid
-            gap-16
-            lg:grid-cols-[1fr_320px]
+              mt-24
+              grid
+              gap-16
+              lg:grid-cols-[1fr_350px]
             "
           >
 
-            {/* Form */}
-
             <ContactForm />
 
-            {/* Contact Info */}
+            {/* Sidebar */}
 
             <aside
-  className="
-  h-fit
-  rounded-3xl
-  border
-  border-[var(--border)]
-  bg-[var(--surface)]
-  p-8
-  "
->
+              className="
+                h-fit
+                rounded-3xl
+                border
+                border-[var(--border)]
+                bg-[var(--surface)]
+                p-8
+              "
+            >
 
-  <p
-    className="
-    mb-8
-    text-sm
-    uppercase
-    tracking-[0.25em]
-    text-[var(--accent)]
-    "
-  >
-    Direct Contact
-  </p>
+              <p
+                className="
+                  mb-8
+                  text-sm
+                  uppercase
+                  tracking-[0.25em]
+                  text-[var(--accent)]
+                "
+              >
+                Direct Contact
+              </p>
 
-  {/* Email */}
+              <div className="space-y-8">
 
-  <div className="mb-10">
-    <p
-      className="
-      mb-2
-      text-sm
-      text-[var(--warm-grey)]
-      "
-    >
-      Email
-    </p>
+                <div>
+                  <p className="mb-2 text-sm text-[var(--warm-grey)]">
+                    Email
+                  </p>
 
-    <a
-      href="mailto:contact@cosmolix.co.in"
-      className="
-      transition-colors
-      hover:text-[var(--accent)]
-      "
-    >
-      contact@cosmolix.co.in
-    </a>
-  </div>
+                  <a
+                    href="mailto:contact@cosmolix.co.in"
+                    className="hover:text-[var(--accent)]"
+                  >
+                    info@cosmolix.co.in
+                  </a>
+                </div>
 
-  {/* Socials */}
+                <div>
+                  <p className="mb-4 text-sm text-[var(--warm-grey)]">
+                    Connect
+                  </p>
 
-  <div>
+                  <div className="flex flex-wrap gap-4">
 
-    <p
-      className="
-      mb-4
-      text-sm
-      text-[var(--warm-grey)]
-      "
-    >
-      Connect
-    </p>
+                    {socials.map((social) => {
+                      const Icon = social.icon;
 
-    <div className="flex flex-wrap gap-4">
+                      return (
+                        <a
+                          key={social.label}
+                          href={social.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={social.label}
+                          className="
+                            rounded-full
+                            border
+                            border-[var(--border)]
+                            p-3
 
-      {/* LinkedIn */}
+                            transition-all
+                            duration-300
 
-      <a
-        href="YOUR_LINKEDIN_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="LinkedIn"
-        className="
-        rounded-full
-        border
-        border-[var(--border)]
-        p-3
+                            hover:border-[var(--accent)]
+                            hover:text-[var(--accent)]
+                            hover:-translate-y-1
+                          "
+                        >
+                          <Icon size={18} />
+                        </a>
+                      );
+                    })}
 
-        transition-all
-        duration-300
+                  </div>
+                </div>
 
-        hover:border-[var(--accent)]
-        hover:text-[var(--accent)]
-        hover:-translate-y-1
-        "
-      >
-        <FaLinkedinIn size={18} />
-      </a>
+                <div>
+                  <p className="mb-2 text-sm text-[var(--warm-grey)]">
+                    Available For
+                  </p>
 
-      {/* GitHub */}
+                  <ul className="space-y-2 text-sm">
+                    <li>• Startup Consulting</li>
+                    <li>• Software Development</li>
+                    <li>• Research Collaborations</li>
+                    <li>• Cybersecurity Projects</li>
+                    <li>• Community Initiatives</li>
+                  </ul>
+                </div>
 
-      <a
-        href="YOUR_GITHUB_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="GitHub"
-        className="
-        rounded-full
-        border
-        border-[var(--border)]
-        p-3
+              </div>
 
-        transition-all
-        duration-300
-
-        hover:border-[var(--accent)]
-        hover:text-[var(--accent)]
-        hover:-translate-y-1
-        "
-      >
-        <FaGithub size={18} />
-      </a>
-
-      {/* X */}
-
-      <a
-        href="YOUR_X_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="X"
-        className="
-        rounded-full
-        border
-        border-[var(--border)]
-        p-3
-
-        transition-all
-        duration-300
-
-        hover:border-[var(--accent)]
-        hover:text-[var(--accent)]
-        hover:-translate-y-1
-        "
-      >
-        <FaXTwitter size={18} />
-      </a>
-
-      {/* Instagram */}
-
-      <a
-        href="YOUR_INSTAGRAM_URL"
-        target="_blank"
-        rel="noopener noreferrer"
-        aria-label="Instagram"
-        className="
-        rounded-full
-        border
-        border-[var(--border)]
-        p-3
-
-        transition-all
-        duration-300
-
-        hover:border-[var(--accent)]
-        hover:text-[var(--accent)]
-        hover:-translate-y-1
-        "
-      >
-        <FaInstagram size={18} />
-      </a>
-
-    </div>
-
-    <div
-  className="
-  mt-10
-  border-t
-  border-[var(--border)]
-  pt-8
-  "
->
-  <p
-    className="
-    text-sm
-    leading-relaxed
-    text-[var(--warm-grey)]
-    "
-  >
-    Open to collaborations,
-    startup discussions,
-    technology partnerships,
-    speaking opportunities
-    and community initiatives.
-  </p>
-</div>
-
-  </div>
-
-</aside>
+            </aside>
 
           </div>
 

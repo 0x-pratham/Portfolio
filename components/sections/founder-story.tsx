@@ -72,7 +72,7 @@ export function FounderStory() {
                 font-light
                 "
               >
-                The Beginning
+                Curiosity
               </h3>
 
               <p
@@ -82,21 +82,17 @@ export function FounderStory() {
                 text-[var(--warm-grey)]
                 "
               >
-                I was born on October 17, 2005, in a
-                middle-class family where education,
-                discipline and hard work were deeply
-                valued.
+                I grew up in a family where education,
+                discipline and hard work were deeply valued.
 
-                My father, a teacher, always told me
-                that I was capable of achieving
-                something extraordinary. At the time,
-                I didn't fully understand those words,
-                but they would eventually shape the
-                way I looked at life.
+                My father, a teacher, constantly encouraged
+                me to think beyond limitations and believe
+                that meaningful impact comes from continuous
+                learning and persistence.
 
-                I was never the student who chased
-                grades. What fascinated me wasn't the
-                classroom itself. It was curiosity.
+                Those lessons would later influence how I
+                approach technology, leadership and
+                entrepreneurship.
               </p>
             </div>
 
@@ -110,7 +106,7 @@ export function FounderStory() {
                 font-light
                 "
               >
-                Leaving Home
+                Taking Risks
               </h3>
 
               <p
@@ -182,7 +178,7 @@ export function FounderStory() {
                 font-light
                 "
               >
-                Building Something Bigger
+                Building Impact
               </h3>
 
               <p
@@ -193,20 +189,23 @@ export function FounderStory() {
                 "
               >
                 While pursuing my B.Tech in Computer
-                Science and Engineering at JSPM
-                University, I realized that many
-                talented students lacked guidance,
-                mentorship and practical industry
-                exposure.
+                Science and Engineering at JSPM University,
+                I observed a recurring challenge: talented
+                students and businesses often lacked access
+                to the right guidance, technology and
+                opportunities.
 
-                That realization led me to establish
-                the JSPM Coding Club.
+                That realization led me to establish the
+                JSPM Coding Club, build developer
+                communities and eventually co-found
+                Cosmolix Pvt Ltd.
 
-                Later, alongside my childhood friend
-                and business partner Dhanesh Shingade,
-                I co-founded Cosmolix Pvt Ltd and
-                launched GenXCode to bridge the gap
-                between education and industry.
+                Together with my business partner Dhanesh
+                Shingade, I launched Cosmolix with a vision
+                to create meaningful technology solutions,
+                empower future innovators and bridge the
+                gap between education, industry and
+                innovation.
               </p>
             </div>
 

@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { Magnetic } from "@/components/shared/magnetic";
+import Link from "next/link";
 
 
 export function Hero() {
@@ -84,48 +85,70 @@ export function Hero() {
   communities.
 </p>
 
-            <div className="flex flex-wrap gap-4">
+            <div
+  className="
+    flex
+    items-center
+    gap-4
+    flex-wrap
+  "
+>
               <Magnetic>
-              <button
-                className="
-  flex
-  items-center
-  gap-2
-  rounded-full
-  border
-  border-[var(--accent)]
-  px-7
-  py-4
-  text-[var(--warm-ivory)]
-  transition-all
-  duration-300
-  hover:bg-[var(--accent)]
-  hover:text-black
-"
-              >
-                View Projects
-                <ArrowRight size={18} />
-              </button>
-              </Magnetic>
+  <Link
+    href="/projects"
+    className="
+      flex
+      items-center
+      gap-2
+      rounded-full
+      border
+      border-[var(--accent)]
+      px-7
+      py-4
+      text-[var(--warm-ivory)]
+      transition-all
+      duration-300
+      hover:bg-[var(--accent)]
+      hover:text-black
+    "
+  >
+    View Projects
+    <ArrowRight size={18} />
+  </Link>
+</Magnetic>
 
               <Magnetic>
-              <button
-                className="
-  rounded-full
-  border
-  border-[var(--border)]
-  px-7
-  py-4
-  text-[var(--warm-ivory)]
-  transition-all
-  duration-300
-  hover:border-[var(--accent)]
-  hover:text-[var(--accent)]
-"
-              >
-                Explore Cosmolix
-              </button>
-              </Magnetic>
+              <Link
+  href="https://www.cosmolix.co.in/"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="
+    flex
+    items-center
+    justify-center
+
+    rounded-full
+    border
+    border-[var(--border)]
+
+    min-h-[56px]
+
+    px-7
+    py-4
+
+    text-[var(--warm-ivory)]
+
+    transition-all
+    duration-300
+
+    hover:border-[var(--accent)]
+    hover:text-[var(--accent)]
+  "
+>
+  Explore Cosmolix
+</Link>
+</Magnetic>
+              
             </div>
 <div
   className="

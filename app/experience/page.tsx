@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 
 export const metadata: Metadata = {
-  title: "Experience | Prathamesh Bhil",
+  title: "Experience",
   description:
     "Leadership, entrepreneurship, internships, and technology journey of Prathamesh Bhil.",
 };
@@ -42,7 +42,7 @@ const timeline = [
   },
 
   {
-    year: "2025",
+    year: "2026",
     title: "Cosmolix Pvt Ltd",
     role: "Founder & CEO",
     description:

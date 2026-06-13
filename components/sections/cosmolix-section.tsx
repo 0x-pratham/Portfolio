@@ -27,7 +27,7 @@ export function CosmolixSection() {
             md:text-7xl
             "
           >
-            Why Cosmolix Exists.
+            The Vision Behind Cosmolix.
           </h2>
         </div>
 
@@ -104,7 +104,10 @@ export function CosmolixSection() {
               "
             >
               Today, Cosmolix powers initiatives
-              like GenXCode and serves as the first
+              like GenXCode, software products,
+              research initiatives,
+              cybersecurity innovation,
+              developer communities and serves as the first
               chapter in a much larger vision that
               continues to evolve every day.
             </p>

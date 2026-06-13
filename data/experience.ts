@@ -4,39 +4,44 @@ export interface ExperienceItem {
   description: string;
 }
 
-export const experienceTimeline: ExperienceItem[] = [
+export const experienceTimeline = [
+  {
+    year: "2022",
+    title: "Ethical Hacker at Team UCC (Unknown Cyber Cult)",
+    description:
+      "Conducted penetration testing, vulnerability discovery, and exploit analysis against diverse targets. Performed black box and white-box assessments to expose security flaws and bypass system controls before malicious actors could exploit them.",
+  },
+  {
+    year: "2023",
+    title: "Full Stack Java Developer Intern",
+    description:
+      "Completed professional internship at Microspectra Software Technologies, contributing to full-stack application development and software engineering projects.",
+  },
   {
     year: "2024",
-    title: "Coding Club Founder",
+    title: "Founder — Coding Club",
     description:
-      "Founded and led coding club initiatives, mentoring students and organizing technical activities.",
+      "Established and led a student developer community, organizing technical workshops, mentorship programs, and collaborative learning initiatives.",
   },
 
   {
     year: "2024",
     title: "Cybersecurity Research",
     description:
-      "Focused on networking, penetration testing fundamentals, and cybersecurity research.",
+      "Explored networking, penetration testing, and cybersecurity fundamentals while conducting independent technical research.",
   },
 
   {
     year: "2025",
-    title: "GenXCode Development",
+    title: "Founder — GenXCode",
     description:
-      "Built educational technology initiatives and developer-focused platforms.",
+      "Launched GenXCode to empower aspiring developers through technology education, community building, and practical learning experiences.",
   },
 
   {
     year: "2026",
     title: "Founder & CEO — Cosmolix Pvt Ltd",
     description:
-      "Founded Cosmolix Pvt Ltd and began delivering software, AI, and digital solutions.",
-  },
-
-  {
-    year: "2026",
-    title: "Full Stack Java Developer Intern",
-    description:
-      "Completed internship at Microspectra Software Technologies.",
+      "Founded Cosmolix Pvt Ltd, delivering software engineering, AI, cybersecurity, and digital transformation solutions for businesses and organizations.",
   },
 ];
