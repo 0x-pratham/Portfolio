@@ -21,6 +21,8 @@ export interface Project {
 
   solution: string;
 
+  impact: string;
+
   results: string[];
 
   image: string;

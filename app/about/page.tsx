@@ -9,6 +9,7 @@ import { MissionVision } from "@/components/sections/mission-vision";
 import { CosmolixSection } from "@/components/sections/cosmolix-section";
 import { ValuesSection } from "@/components/sections/values-section";
 import { ContactCTA } from "@/components/sections/contact-cta";
+import { FutureVision } from "@/components/sections/future-vision";
 
 export const metadata: Metadata = {
   title: "About | Prathamesh Bhil",
@@ -27,6 +28,7 @@ export default function AboutPage() {
         <MissionVision />
         <CosmolixSection />
         <ValuesSection />
+        <FutureVision />
         <ContactCTA />
       </main>
 

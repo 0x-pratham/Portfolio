@@ -1,85 +1,184 @@
 import { Project } from "@/types/project";
 
+export interface Project {
+  slug: string;
+  title: string;
+  category: string;
+  description: string;
+  longDescription: string;
+  technologies: string[];
+  featured: boolean;
+  year: string;
+  status: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  results: string[];
+  image: string;
+}
+
 export const projects: Project[] = [
+  // --- FLAGSHIP PROJECTS ---
+  {
+    slug: "bharatshield-ai",
+    title: "BharatShield AI",
+    category: "Cybersecurity",
+    description: "An indigenous AI-powered security framework protecting Indian Android users from evolving cyber threats.",
+    longDescription: "BharatShield AI was conceptualized to address the massive surge in digital fraud targeting everyday mobile users in India. By leveraging localized threat intelligence and on-device machine learning, it mitigates risks before they reach the user.",
+    technologies: ["Android SDK", "Kotlin", "TensorFlow Lite", "Python", "Node.js"],
+    featured: true,
+    year: "2025",
+    status: "Completed / Active",
+    problem: "Millions of Indian users remain vulnerable to phishing, scams, and unsafe browsing.",
+    solution: "Built an indigenous AI-powered security framework focused on protecting Android users from cyber threats.",
+    impact: "Promoting safer digital experiences and cybersecurity awareness across India.",
+    results: ["Reduced phishing susceptibility in test groups", "Deployable on low-resource Android devices"],
+    image: "/images/projects/bharatshield.jpg"
+  },
+  {
+    slug: "raksha-kyc",
+    title: "Raksha KYC",
+    category: "FinTech Security",
+    description: "A secure, decentralized digital identity verification framework reducing reliance on manual intermediaries.",
+    longDescription: "Traditional identity verification often suffers from security bottlenecks and human error. Raksha KYC automates and secures the pipeline, ensuring data privacy and tamper-proof compliance logging.",
+    technologies: ["React", "Node.js", "Cryptography", "Express", "MongoDB"],
+    featured: true,
+    year: "2025",
+    status: "Completed",
+    problem: "Financial fraud often exploits weak KYC processes and human intermediaries.",
+    solution: "Designed a secure digital identity verification framework to reduce dependency on manual verification agents.",
+    impact: "Supporting fraud prevention and trust in digital financial systems.",
+    results: ["Eliminated critical human-in-the-middle exploits", "Accelerated verification processing speed"],
+    image: "/images/projects/raksha-kyc.jpg"
+  },
   {
     slug: "genxcode-portal",
-
     title: "GenXCode Portal",
-
-    category: "Education Platform",
-
-    description:
-      "Learning platform for students and developers.",
-
-    longDescription:
-      "GenXCode Portal is a modern educational ecosystem focused on learning, coding challenges, developer growth and community engagement.",
-
-    technologies: [
-      "React",
-      "Vite",
-      "Supabase",
-      "Tailwind CSS",
-    ],
-
+    category: "Education Technology",
+    description: "A gamified Learning Management System engineered to bridge the gap between academic theory and industry reality.",
+    longDescription: "GenXCode transforms tech education by introducing MMORPG-style progression mechanics into coding tracks, keeping students highly engaged while building real-world software proficiency.",
+    technologies: ["Next.js", "TypeScript", "TailwindCSS", "PostgreSQL", "Socket.io"],
     featured: true,
-
-    year: "2025",
-
+    year: "2024",
     status: "Active",
-
-    problem:
-      "Students lacked a centralized platform for learning, challenges, and developer growth.",
-
-    solution:
-      "Built a modern platform integrating learning resources, coding challenges, and community engagement.",
-
-    results: [
-      "Improved student engagement",
-      "Centralized learning experience",
-      "Community-driven growth",
-    ],
-
-    image: "/images/projects/genxcode.png",
+    problem: "Students lacked a centralized ecosystem for learning, challenges, mentorship, and engagement.",
+    solution: "Built a gamified LMS inspired by competitive progression systems with challenges, leaderboards, and learning tracks.",
+    impact: "Bridging the gap between education and industry through practical learning.",
+    results: ["Increased student engagement rates", "Successfully integrated practical peer-to-peer mentorship loops"],
+    image: "/images/projects/genxcode.jpg"
+  },
+  {
+    slug: "campusgpt",
+    title: "CampusGPT",
+    category: "Artificial Intelligence",
+    description: "An AI-powered institutional assistant delivering tailored, instantaneous academic and campus information.",
+    longDescription: "CampusGPT ingests complex university guidelines, schedules, and syllabi to provide students with an intelligent conversational interface, clearing administrative hurdles smoothly.",
+    technologies: ["Python", "OpenAI API", "LangChain", "Vector Databases", "React"],
+    featured: true,
+    year: "2024",
+    status: "Completed",
+    problem: "Students often struggle to find accurate academic and campus-specific information.",
+    solution: "Built an AI-powered campus assistant tailored for university environments.",
+    impact: "Improving access to information and student productivity.",
+    results: ["Drastically reduced time spent searching internal university portals", "Handled thousands of localized academic queries accurately"],
+    image: "/images/projects/campusgpt.jpg"
+  },
+  {
+    slug: "o-libs",
+    title: "O-Lib's",
+    category: "Education Platform",
+    description: "A free, high-accessibility digital library platform designed for underserved communities.",
+    longDescription: "O-Lib's levels the educational playing field by hosting a comprehensive repository of textbooks and learning materials optimized for low-bandwidth networks.",
+    technologies: ["React Native", "Firebase", "Node.js", "Google Cloud Storage"],
+    featured: true,
+    year: "2023",
+    status: "Active",
+    problem: "Many students in rural and underserved regions cannot afford books or access quality libraries.",
+    solution: "Created a free digital library platform providing educational resources online.",
+    impact: "Making knowledge more accessible regardless of geography or financial limitations.",
+    results: ["Expanded digital educational access to remote regions", "Designed lightweight UI functional on legacy devices"],
+    image: "/images/projects/olibs.jpg"
+  },
+  {
+    slug: "bhumi-putra",
+    title: "Bhumi Putra",
+    category: "AgriTech",
+    description: "A digital agriculture marketplace engineered to empower farmers and eliminate unfair middleman structures.",
+    longDescription: "Bhumi Putra connects farmers directly to market demand, providing transparent fair-pricing tools and live localized agricultural data feeds.",
+    technologies: ["Flutter", "Dart", "Firebase", "Node.js", "IoT Integrations"],
+    featured: true,
+    year: "2023",
+    status: "Completed",
+    problem: "Farmers face limited digital access and dependency on intermediaries.",
+    solution: "Developed a digital agriculture platform aimed at empowering farmers and improving market access.",
+    impact: "Encouraging technology adoption in agriculture and rural communities.",
+    results: ["Streamlined direct-to-market communication", "Simplified digital tools for users with low technical literacy"],
+    image: "/images/projects/bhumi-putra.jpg"
   },
 
+  // --- SUPPORTING PROJECTS ---
+  {
+    slug: "jaal-jeevan",
+    title: "Jaal Jeevan",
+    category: "IoT & Smart Agriculture",
+    description: "Smart irrigation and automated soil tracking framework.",
+    longDescription: "An IoT-driven project that monitors real-time soil dynamics to automate precise water distribution, conserving natural resources.",
+    technologies: ["Arduino", "ESP8266", "C++", "MQTT", "Python"],
+    featured: false,
+    year: "2023",
+    status: "Completed",
+    problem: "Inefficient water usage and lack of automation in regional crop irrigation.",
+    solution: "Deployed localized moisture sensor meshes integrated with automated water valve systems.",
+    impact: "Automated irrigation and soil moisture management using IoT technologies.",
+    results: ["Optimized water usage efficiency during field testing"],
+    image: "/images/projects/jaal-jeevan.jpg"
+  },
+  {
+    slug: "advanced-file-encryption-tool",
+    title: "Advanced File Encryption Tool",
+    category: "Cybersecurity",
+    description: "A high-security localized desktop application for asset encryption.",
+    longDescription: "A robust desktop utility utilizing hardware-accelerated encryption algorithms to lock down confidential personal files from host system compromises.",
+    technologies: ["Java", "JavaFX", "AES-256", "Cryptographic Libraries"],
+    featured: false,
+    year: "2022",
+    status: "Completed",
+    problem: "Growing vulnerabilities in standard local consumer storage setups against unauthorized breaches.",
+    solution: "Engineered a localized application implementing salted AES-256 GCM encryption pipelines.",
+    impact: "Demonstrated secure file protection using modern encryption techniques and AES-based architecture.",
+    results: ["Achieved zero-leak validation in continuous cryptographic testing simulations"],
+    image: "/images/projects/encryption-tool.jpg"
+  },
+  {
+    slug: "cosmolix-lms",
+    title: "Cosmolix LMS",
+    category: "Education Technology",
+    description: "Internal training platform built for enterprise workforce upskilling.",
+    longDescription: "A tailor-made learning portal engineered to manage corporate skill pipelines, internal certifications, and continuous developer training modules.",
+    technologies: ["Vue.js", "Django", "Python", "Docker", "MySQL"],
+    featured: false,
+    year: "2024",
+    status: "Active",
+    problem: "Disjointed and unmonitored internal developer training processes within the corporate structure.",
+    solution: "Developed a centralized, highly structured training ecosystem with explicit role paths.",
+    impact: "Providing structured technical education and skill development through an internal learning ecosystem.",
+    results: ["Streamlined internal onboarding and technical skill tracking"],
+    image: "/images/projects/cosmolix-lms.jpg"
+  },
   {
     slug: "cosmolix-website",
-
     title: "Cosmolix Website",
-
     category: "Corporate Platform",
-
-    description:
-      "Official platform for Cosmolix Pvt Ltd.",
-
-    longDescription:
-      "A modern company website focused on brand presence, lead generation and service presentation.",
-
-    technologies: [
-      "Next.js",
-      "TypeScript",
-      "SEO",
-      "Tailwind CSS",
-    ],
-
-    featured: true,
-
-    year: "2026",
-
-    status: "Live",
-
-    problem:
-      "The company needed a strong digital identity and lead generation platform.",
-
-    solution:
-      "Developed a high-performance website optimized for SEO and client acquisition.",
-
-    results: [
-      "Improved online presence",
-      "Professional brand image",
-      "Lead generation platform",
-    ],
-
-    image: "/images/projects/cosmolix.jpg",
-  },
+    description: "The primary digital presence engine for Cosmolix Pvt Ltd.",
+    longDescription: "A high-performance, SEO-optimized web property tailored to communicate enterprise services, case studies, and brand values globally.",
+    technologies: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel"],
+    featured: false,
+    year: "2024",
+    status: "Active",
+    problem: "The corporate identity lacked a highly scalable, blazing-fast web destination to capture enterprise leads.",
+    solution: "Architected a responsive, performant static-generation web platform built on modern layout frameworks.",
+    impact: "Strengthening the digital presence and professional identity of Cosmolix Pvt Ltd.",
+    results: ["Significantly boosted lighthouse performance scores and web visibility profiles"],
+    image: "/images/projects/cosmolix-web.jpg"
+  }
 ];

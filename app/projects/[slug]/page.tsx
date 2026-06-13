@@ -54,38 +54,326 @@ export default async function ProjectPage({
       <Navbar />
 
       <main className="py-24">
-        <div className="container-custom">
-          <p className="mb-4 text-violet-400">
-            {project.category}
-          </p>
+        {/* Hero */}
 
-          <h1 className="mb-8 text-6xl font-bold">
-            {project.title}
-          </h1>
+<div className="max-w-5xl">
 
-          <p className="mb-12 max-w-3xl text-xl text-slate-400">
-            {project.longDescription}
-          </p>
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.35em]
+    text-[var(--accent)]
+    "
+  >
+    {project.category}
+  </p>
 
-          <div className="flex flex-wrap gap-3">
-            {project.technologies.map(
-              (tech) => (
-                <span
-                  key={tech}
-                  className="
-                    rounded-full
-                    border
-                    border-white/10
-                    px-4
-                    py-2
-                  "
-                >
-                  {tech}
-                </span>
-              )
-            )}
-          </div>
-        </div>
+  <h1
+    className="
+    mb-8
+    font-[var(--font-cormorant)]
+    text-6xl
+    font-light
+    leading-[0.95]
+    md:text-8xl
+    "
+  >
+    {project.title}
+  </h1>
+
+  <p
+    className="
+    max-w-3xl
+    text-xl
+    leading-relaxed
+    text-[var(--warm-grey)]
+    "
+  >
+    {project.description}
+  </p>
+
+</div>
+
+{/* Meta */}
+
+<div
+  className="
+  mt-16
+  grid
+  gap-6
+  md:grid-cols-3
+  "
+>
+
+  <div
+    className="
+    rounded-3xl
+    border
+    border-[var(--border)]
+    p-6
+    "
+  >
+    <p className="text-sm text-[var(--warm-grey)]">
+      Year
+    </p>
+
+    <p className="mt-2 text-2xl">
+      {project.year}
+    </p>
+  </div>
+
+  <div
+    className="
+    rounded-3xl
+    border
+    border-[var(--border)]
+    p-6
+    "
+  >
+    <p className="text-sm text-[var(--warm-grey)]">
+      Status
+    </p>
+
+    <p className="mt-2 text-2xl">
+      {project.status}
+    </p>
+  </div>
+
+  <div
+    className="
+    rounded-3xl
+    border
+    border-[var(--border)]
+    p-6
+    "
+  >
+    <p className="text-sm text-[var(--warm-grey)]">
+      Category
+    </p>
+
+    <p className="mt-2 text-2xl">
+      {project.category}
+    </p>
+  </div>
+
+</div>
+
+{/* Problem */}
+
+<section className="mt-24">
+
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.25em]
+    text-[var(--accent)]
+    "
+  >
+    The Problem
+  </p>
+
+  <h2
+    className="
+    mb-8
+    font-[var(--font-cormorant)]
+    text-5xl
+    font-light
+    "
+  >
+    Understanding The Challenge
+  </h2>
+
+  <p
+    className="
+    max-w-4xl
+    text-xl
+    leading-loose
+    text-[var(--warm-grey)]
+    "
+  >
+    {project.problem}
+  </p>
+
+</section>
+
+{/* Solution */}
+
+<section className="mt-24">
+
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.25em]
+    text-[var(--accent)]
+    "
+  >
+    The Solution
+  </p>
+
+  <h2
+    className="
+    mb-8
+    font-[var(--font-cormorant)]
+    text-5xl
+    font-light
+    "
+  >
+    Building The System
+  </h2>
+
+  <p
+    className="
+    max-w-4xl
+    text-xl
+    leading-loose
+    text-[var(--warm-grey)]
+    "
+  >
+    {project.solution}
+  </p>
+
+</section>
+
+{/* Impact */}
+
+<section className="mt-24">
+
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.25em]
+    text-[var(--accent)]
+    "
+  >
+    Impact
+  </p>
+
+  <h2
+    className="
+    mb-8
+    font-[var(--font-cormorant)]
+    text-5xl
+    font-light
+    "
+  >
+    Why It Matters
+  </h2>
+
+  <p
+    className="
+    max-w-4xl
+    text-xl
+    leading-loose
+    text-[var(--warm-grey)]
+    "
+  >
+    {project.impact}
+  </p>
+
+</section>
+
+{/* Results */}
+
+<section className="mt-24">
+
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.25em]
+    text-[var(--accent)]
+    "
+  >
+    Results
+  </p>
+
+  <h2
+    className="
+    mb-10
+    font-[var(--font-cormorant)]
+    text-5xl
+    font-light
+    "
+  >
+    Key Outcomes
+  </h2>
+
+  <div className="grid gap-4">
+
+    {project.results.map((result) => (
+      <div
+        key={result}
+        className="
+        rounded-2xl
+        border
+        border-[var(--border)]
+        p-6
+        "
+      >
+        ✓ {result}
+      </div>
+    ))}
+
+  </div>
+
+</section>
+
+{/* Tech Stack */}
+
+<section className="mt-24">
+
+  <p
+    className="
+    mb-4
+    text-sm
+    uppercase
+    tracking-[0.25em]
+    text-[var(--accent)]
+    "
+  >
+    Technologies
+  </p>
+
+  <h2
+    className="
+    mb-10
+    font-[var(--font-cormorant)]
+    text-5xl
+    font-light
+    "
+  >
+    Tech Stack
+  </h2>
+
+  <div className="flex flex-wrap gap-4">
+
+    {project.technologies.map((tech) => (
+      <span
+        key={tech}
+        className="
+        rounded-full
+        border
+        border-[var(--border)]
+        px-5
+        py-3
+        "
+      >
+        {tech}
+      </span>
+    ))}
+
+  </div>
+
+</section>
       </main>
 
       <Footer />

@@ -121,7 +121,14 @@ leading-relaxed">
       leading-relaxed
     "
   >
-    {project.results[0]}
+    Problem
+{project.problem}
+
+Solution
+{project.solution}
+
+Impact
+{project.impact}
   </p>
 </div>
 

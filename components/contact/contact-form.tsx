@@ -78,13 +78,26 @@ export function ContactForm() {
           {...register("name")}
           placeholder="Your Name"
           className="
-            w-full
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.03]
-            p-4
-          "
+w-full
+rounded-2xl
+border
+border-[var(--border)]
+bg-[var(--surface)]
+px-5
+py-4
+
+text-[var(--warm-ivory)]
+
+placeholder:text-[var(--warm-grey)]
+
+transition-all
+duration-300
+
+hover:border-[var(--accent)]
+
+focus:border-[var(--accent)]
+focus:outline-none
+"
         />
 
         {errors.name && (
@@ -101,13 +114,26 @@ export function ContactForm() {
           {...register("email")}
           placeholder="Your Email"
           className="
-            w-full
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.03]
-            p-4
-          "
+w-full
+rounded-2xl
+border
+border-[var(--border)]
+bg-[var(--surface)]
+px-5
+py-4
+
+text-[var(--warm-ivory)]
+
+placeholder:text-[var(--warm-grey)]
+
+transition-all
+duration-300
+
+hover:border-[var(--accent)]
+
+focus:border-[var(--accent)]
+focus:outline-none
+"
         />
 
         {errors.email && (
@@ -125,13 +151,26 @@ export function ContactForm() {
           rows={6}
           placeholder="Tell me about your project..."
           className="
-            w-full
-            rounded-2xl
-            border
-            border-white/10
-            bg-white/[0.03]
-            p-4
-          "
+w-full
+rounded-2xl
+border
+border-[var(--border)]
+bg-[var(--surface)]
+px-5
+py-4
+
+text-[var(--warm-ivory)]
+
+placeholder:text-[var(--warm-grey)]
+
+transition-all
+duration-300
+
+hover:border-[var(--accent)]
+
+focus:border-[var(--accent)]
+focus:outline-none
+"
         />
 
         {errors.message && (
@@ -147,21 +186,43 @@ export function ContactForm() {
         type="submit"
         disabled={loading}
         className="
-          rounded-full
-          bg-white
-          px-6
-          py-4
-          text-black
-        "
+rounded-full
+
+border
+border-[var(--accent)]
+
+px-8
+py-4
+
+text-[var(--warm-ivory)]
+
+transition-all
+duration-300
+
+hover:bg-[var(--accent)]
+hover:text-black
+
+disabled:opacity-50
+disabled:cursor-not-allowed
+"
       >
         {loading
-          ? "Sending..."
+          ? "Sending Your Message..."
           : "Send Message"}
       </button>
 
       {success && (
-        <p className="text-green-400">
-          Message sent successfully.
+        <p
+  className="
+  rounded-2xl
+  border
+  border-green-500/30
+  bg-green-500/10
+  p-4
+  text-green-400
+  "
+>
+          Thanks for reaching out. I'll get back to you as soon as possible.
         </p>
       )}
     </form>
