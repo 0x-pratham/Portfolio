@@ -89,41 +89,31 @@ export function Navbar() {
         aria-label="Main Navigation"
       >
         {/* Logo Branding */}
+        {/* Logo Branding */}
         <motion.div variants={navItem} animate="visible">
           <motion.div
-            initial={{
-              opacity: 0,
-              x: -20,
-            }}
-            animate={{
-              opacity: 1,
-              x: 0,
-            }}
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
             transition={{
               duration: 0.5,
               ease: [0.16, 1, 0.3, 1] as any,
             }}
           >
-            {/* Restrained and Premium Logo Hover Interaction */}
             <motion.div
-              whileHover={{
-                y: -2,
-              }}
-              transition={{
-                duration: 0.3,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
             >
               <Link href="/" className="flex flex-col leading-none">
                 <span
-                  className={`flex flex-col leading-none transition-all duration-500 ${
-                    scrolled ? "opacity-100" : "opacity-90"
-                  }`}
+                  className={`
+                    text-xl font-serif tracking-[0.15em] uppercase
+                    bg-clip-text text-transparent bg-gradient-to-r 
+                    from-[var(--warm-ivory)] to-[var(--accent)]
+                    transition-all duration-500
+                    ${scrolled ? "opacity-100" : "opacity-90"}
+                  `}
                 >
-                  PB
-                </span>
-                <span className="mt-1 text-[11px] uppercase tracking-[0.25em] text-muted whitespace-nowrap">
-                  Engineer & Founder
+                  Prathamesh Bhil
                 </span>
               </Link>
             </motion.div>
@@ -164,7 +154,7 @@ export function Navbar() {
           })}
         </div>
 
-        {/* Desktop CTA Button - Shimmer Animation Removed */}
+        {/* Desktop CTA Button */}
         <div className="hidden md:block">
           <Magnetic>
             <motion.div variants={navItem} animate="visible">
@@ -196,7 +186,7 @@ export function Navbar() {
           </motion.div>
         </button>
 
-        {/* Mobile Dropdown Menu Upgrade */}
+        {/* Mobile Dropdown Menu */}
         <AnimatePresence>
           {open && (
             <motion.div
@@ -206,7 +196,6 @@ export function Navbar() {
               transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
               className="absolute left-0 top-full flex w-full flex-col bg-[var(--bg)] p-8 md:hidden border-t border-[var(--border)] overflow-hidden"
             >
-              {/* Premium Hierarchy Navigation Section Label */}
               <div className="mb-4 text-[10px] uppercase tracking-[0.35em] text-muted font-mono opacity-60">
                 Navigation
               </div>
@@ -233,7 +222,6 @@ export function Navbar() {
                   </motion.div>
                 ))}
                 
-                {/* Intentional Bottom Mobile Menu Actions Container */}
                 <motion.div 
                   variants={navItem} 
                   className="mt-auto pt-8 pb-16"
