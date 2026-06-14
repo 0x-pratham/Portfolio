@@ -303,7 +303,7 @@ export default async function ProjectPage({
               )}
 
               {/* Tech Stack Section */}
-              {project.techStack && project.techStack.length > 0 && (
+              {(project as any).techStack && (project as any).techStack.length > 0 && (
                 <section id="tech-stack" className="scroll-mt-32">
                   <Reveal>
                     <p className="mb-4 text-sm uppercase tracking-[0.25em] text-[var(--accent)]">
@@ -316,7 +316,7 @@ export default async function ProjectPage({
                     </h2>
                   </Reveal>
                   <div className="flex flex-wrap gap-3">
-                    {project.techStack.map((tech, idx) => (
+                    {(project as any).techStack.map((tech: string, idx: number) => (
                       <Reveal key={tech} delay={idx * 0.03}>
                         <span
                           className="
@@ -364,7 +364,7 @@ export default async function ProjectPage({
                     Results
                   </a>
                 )}
-                {project.techStack && project.techStack.length > 0 && (
+                {(project as any).techStack && (project as any).techStack.length > 0 && (
                   <a href="#tech-stack" className="block text-[var(--warm-grey)] hover:text-[var(--accent)] transition-colors duration-200">
                     Tech Stack
                   </a>

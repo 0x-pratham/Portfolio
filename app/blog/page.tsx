@@ -17,7 +17,11 @@ export const metadata: Metadata = {
 
 export default function BlogPage() {
   const posts = getAllPosts();
-  const featuredPost = posts[0];
+  // Fixed type assertion by casting to unknown first
+  const featuredPost = posts[0] as unknown as { 
+    slug: string, 
+    frontmatter: { title: string, description: string, date: string } 
+  };
   const remainingPosts = posts.slice(1);
 
   return (
