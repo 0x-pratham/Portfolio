@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 import { NAV_ITEMS } from "@/lib/constants";
 import { Magnetic } from "@/components/shared/magnetic";
@@ -17,7 +17,7 @@ export function Navbar() {
   const pathname = usePathname();
 
   // Animation variants
-  const navContainer = {
+  const navContainer: Variants = {
     hidden: {},
     visible: {
       transition: {
@@ -27,7 +27,7 @@ export function Navbar() {
     },
   };
 
-  const navItem = {
+  const navItem: Variants = {
     hidden: {
       opacity: 0,
       y: -10,
@@ -37,7 +37,7 @@ export function Navbar() {
       y: 0,
       transition: {
         duration: 0.4,
-        ease: [0.16, 1, 0.3, 1],
+        ease: [0.16, 1, 0.3, 1] as any, // Explicit type cast resolving the TS structural mismatch
       },
     },
   };
@@ -65,7 +65,7 @@ export function Navbar() {
     <header
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "border-b border-[var(--border)] bg-[rgba(13,13,13,0.72)] backdrop-blur-xl shadow-[0_8px_32px_rgba(0,0,0,0.18)]"
+          ? "border-b border-[var(--border)] bg-[rgba(13,13,13,0.76)] backdrop-blur-2xl shadow-[0_8px_32px_rgba(0,0,0,0.22)]"
           : "bg-transparent"
       }`}
     >
@@ -98,7 +98,7 @@ export function Navbar() {
             }}
             transition={{
               duration: 0.5,
-              ease: [0.16, 1, 0.3, 1],
+              ease: [0.16, 1, 0.3, 1] as any,
             }}
           >
             <Link href="/" className="flex flex-col leading-none">
