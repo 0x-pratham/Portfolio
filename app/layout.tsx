@@ -14,6 +14,8 @@ import { LenisProvider } from "@/components/providers/lenis-provider";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 
+import { PageTransition } from "@/components/providers/page-transition";
+
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   variable: "--font-cormorant",
@@ -121,7 +123,9 @@ export default function RootLayout({
   }}
 />
 <LenisProvider>
-  {children}
+  <PageTransition>
+    {children}
+  </PageTransition>
 </LenisProvider>
 <Analytics />
 <SpeedInsights />
