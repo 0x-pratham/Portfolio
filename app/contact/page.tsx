@@ -5,6 +5,7 @@ import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "@/components/contact/contact-form";
 
 import { siteConfig } from "@/lib/site-config";
+import { Reveal } from "@/components/shared/reveal";
 
 import {
   FaGithub,
@@ -48,53 +49,73 @@ export default function ContactPage() {
     <>
       <Navbar />
 
-      <main className="py-32">
-        <div className="container-custom">
+      <main className="relative py-32 overflow-hidden">
+        {/* Hero Background Enhancement */}
+        <div
+          className="
+            absolute
+            inset-0
+            pointer-events-none
+            opacity-10
+          "
+          style={{
+            background:
+              "radial-gradient(circle at top left, rgba(139,92,246,0.2), transparent 60%)",
+          }}
+        />
+
+        <div className="container-custom relative z-10">
 
           {/* Hero */}
 
           <div className="max-w-5xl">
 
-            <p
-              className="
-                mb-4
-                text-sm
-                uppercase
-                tracking-[0.35em]
-                text-[var(--accent)]
-              "
-            >
-              Contact
-            </p>
+            <Reveal>
+              <p
+                className="
+                  mb-4
+                  text-sm
+                  uppercase
+                  tracking-[0.35em]
+                  text-[var(--accent)]
+                "
+              >
+                Contact
+              </p>
+            </Reveal>
 
-            <h1
-              className="
-                font-[var(--font-cormorant)]
-                text-6xl
-                font-light
-                leading-[0.95]
-                md:text-8xl
-              "
-            >
-              Let's Build
-              Something Meaningful.
-            </h1>
+            <Reveal delay={0.1}>
+              <h1
+                className="
+                  font-[var(--font-cormorant)]
+                  text-6xl
+                  font-light
+                  leading-[0.95]
+                  md:text-8xl
+                "
+              >
+                Let's Build<br />
+                Something Meaningful.
+              </h1>
+            </Reveal>
 
-            <p
-              className="
-                mt-10
-                max-w-3xl
-                text-xl
-                leading-relaxed
-                text-[var(--warm-grey)]
-              "
-            >
-              I'm always open to discussing
-              technology, startups, research,
-              cybersecurity, collaborations,
-              and innovative ideas that create
-              real-world impact.
-            </p>
+            <Reveal delay={0.2}>
+              <p
+                className="
+                  mt-10
+                  max-w-3xl
+                  text-xl
+                  leading-relaxed
+                  text-[var(--warm-grey)]
+                "
+              >
+                I'm always open to discussing
+                technology, startups, research,
+                cybersecurity, collaborations,
+                and innovative ideas that create
+                real-world impact.
+              </p>
+            </Reveal>
 
           </div>
 
@@ -109,104 +130,109 @@ export default function ContactPage() {
             "
           >
 
-            <ContactForm />
+            {/* Main Form Entry */}
+            <Reveal delay={0.1}>
+              <div>
+                {/* Premium Detail Note */}
+                <p className="mb-6 text-sm text-[var(--warm-grey)] italic">
+                  Usually responds within 24 hours
+                </p>
+                <ContactForm />
+              </div>
+            </Reveal>
 
-            {/* Sidebar */}
-
-            <aside
-              className="
-                h-fit
-                rounded-3xl
-                border
-                border-[var(--border)]
-                bg-[var(--surface)]
-                p-8
-              "
-            >
-
-              <p
+            {/* Sidebar Sticky Area */}
+            <Reveal delay={0.2}>
+              <aside
                 className="
-                  mb-8
-                  text-sm
-                  uppercase
-                  tracking-[0.25em]
-                  text-[var(--accent)]
+                  h-fit
+                  rounded-3xl
+                  border
+                  border-[var(--border)]
+                  bg-[var(--surface)]
+                  p-8
+                  transition-all
+                  duration-500
+                  hover:border-[var(--accent)]
+                  lg:sticky
+                  lg:top-28
                 "
               >
-                Direct Contact
-              </p>
 
-              <div className="space-y-8">
+                <p
+                  className="
+                    mb-8
+                    text-sm
+                    uppercase
+                    tracking-[0.25em]
+                    text-[var(--accent)]
+                  "
+                >
+                  Direct Contact
+                </p>
 
-                <div>
-                  <p className="mb-2 text-sm text-[var(--warm-grey)]">
-                    Email
-                  </p>
+                <div className="space-y-8">
 
-                  <a
-                    href="mailto:contact@cosmolix.co.in"
-                    className="hover:text-[var(--accent)]"
-                  >
-                    info@cosmolix.co.in
-                  </a>
-                </div>
+                  <div>
+                    <p className="mb-2 text-sm text-[var(--warm-grey)]">
+                      Email
+                    </p>
 
-                <div>
-                  <p className="mb-4 text-sm text-[var(--warm-grey)]">
-                    Connect
-                  </p>
-
-                  <div className="flex flex-wrap gap-4">
-
-                    {socials.map((social) => {
-                      const Icon = social.icon;
-
-                      return (
-                        <a
-                          key={social.label}
-                          href={social.href}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label={social.label}
-                          className="
-                            rounded-full
-                            border
-                            border-[var(--border)]
-                            p-3
-
-                            transition-all
-                            duration-300
-
-                            hover:border-[var(--accent)]
-                            hover:text-[var(--accent)]
-                            hover:-translate-y-1
-                          "
-                        >
-                          <Icon size={18} />
-                        </a>
-                      );
-                    })}
-
+                    <a
+                      href="mailto:contact@cosmolix.co.in"
+                      className="group inline-flex items-center gap-1 hover:text-[var(--accent)]"
+                    >
+                      <span>info@cosmolix.co.in</span>
+                      <span className="transition-transform duration-300 group-hover:translate-x-1">
+                        →
+                      </span>
+                    </a>
                   </div>
+
+                  <div>
+                    <p className="mb-4 text-sm text-[var(--warm-grey)]">
+                      Connect
+                    </p>
+
+                    <div className="flex flex-wrap gap-4">
+
+                      {socials.map((social) => {
+                        const Icon = social.icon;
+
+                        return (
+                          <a
+                            key={social.label}
+                            href={social.href}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={social.label}
+                            className="
+                              rounded-full
+                              border
+                              border-[var(--border)]
+                              p-3
+
+                              transition-all
+                              duration-300
+
+                              hover:border-[var(--accent)]
+                              hover:text-[var(--accent)]
+                              hover:-translate-y-1
+                              hover:shadow-[0_10px_25px_rgba(139,92,246,0.12)]
+                            "
+                          >
+                            <Icon size={18} />
+                          </a>
+                        );
+                      })}
+
+                    </div>
+                  </div>
+
                 </div>
 
-                <div>
-                  <p className="mb-2 text-sm text-[var(--warm-grey)]">
-                    Available For
-                  </p>
-
-                  <ul className="space-y-2 text-sm">
-                    <li>• Startup Consulting</li>
-                    <li>• Software Development</li>
-                    <li>• Research Collaborations</li>
-                    <li>• Cybersecurity Projects</li>
-                    <li>• Community Initiatives</li>
-                  </ul>
-                </div>
-
-              </div>
-
-            </aside>
+              </aside>
+            </Reveal>
 
           </div>
 

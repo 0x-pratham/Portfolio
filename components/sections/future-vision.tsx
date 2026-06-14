@@ -92,6 +92,10 @@ export function FutureVision() {
 
           <div
             className="
+            group
+            transition-all
+            duration-300
+            hover:-translate-y-2
             rounded-3xl
             border
             border-[var(--border)]
@@ -105,6 +109,7 @@ export function FutureVision() {
               font-[var(--font-cormorant)]
               text-4xl
               font-light
+              group-hover:text-[var(--accent)]
               "
             >
               Technology
@@ -120,6 +125,10 @@ export function FutureVision() {
 
           <div
             className="
+            group
+            transition-all
+            duration-300
+            hover:-translate-y-2
             rounded-3xl
             border
             border-[var(--border)]
@@ -133,6 +142,7 @@ export function FutureVision() {
               font-[var(--font-cormorant)]
               text-4xl
               font-light
+              group-hover:text-[var(--accent)]
               "
             >
               Communities
@@ -148,6 +158,10 @@ export function FutureVision() {
 
           <div
             className="
+            group
+            transition-all
+            duration-300
+            hover:-translate-y-2
             rounded-3xl
             border
             border-[var(--border)]
@@ -161,6 +175,7 @@ export function FutureVision() {
               font-[var(--font-cormorant)]
               text-4xl
               font-light
+              group-hover:text-[var(--accent)]
               "
             >
               Innovation
@@ -176,6 +191,10 @@ export function FutureVision() {
 
           <div
             className="
+            group
+            transition-all
+            duration-300
+            hover:-translate-y-2
             rounded-3xl
             border
             border-[var(--border)]
@@ -189,6 +208,7 @@ export function FutureVision() {
               font-[var(--font-cormorant)]
               text-4xl
               font-light
+              group-hover:text-[var(--accent)]
               "
             >
               Cosmo Group
@@ -213,6 +233,9 @@ export function FutureVision() {
           border-l-2
           border-[var(--accent)]
           pl-8
+          opacity-90
+          hover:opacity-100
+          transition-opacity
           "
         >
           <p

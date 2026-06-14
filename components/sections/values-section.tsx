@@ -41,7 +41,23 @@ export function ValuesSection() {
           "
         >
 
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-10">
+          <div
+            className="
+            rounded-3xl
+            border
+            border-[var(--border)]
+            bg-[var(--surface)]
+            p-10
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:border-[var(--accent)]
+            "
+          >
+            <p className="mb-4 font-[var(--font-cormorant)] text-xl text-[var(--accent)]">
+              01
+            </p>
+
             <h3 className="mb-6 font-[var(--font-cormorant)] text-4xl font-light">
               Build Before You Wait
             </h3>
@@ -58,7 +74,23 @@ export function ValuesSection() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-10">
+          <div
+            className="
+            rounded-3xl
+            border
+            border-[var(--border)]
+            bg-[var(--surface)]
+            p-10
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:border-[var(--accent)]
+            "
+          >
+            <p className="mb-4 font-[var(--font-cormorant)] text-xl text-[var(--accent)]">
+              02
+            </p>
+
             <h3 className="mb-6 font-[var(--font-cormorant)] text-4xl font-light">
               Learn By Doing
             </h3>
@@ -75,7 +107,23 @@ export function ValuesSection() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-10">
+          <div
+            className="
+            rounded-3xl
+            border
+            border-[var(--border)]
+            bg-[var(--surface)]
+            p-10
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:border-[var(--accent)]
+            "
+          >
+            <p className="mb-4 font-[var(--font-cormorant)] text-xl text-[var(--accent)]">
+              03
+            </p>
+
             <h3 className="mb-6 font-[var(--font-cormorant)] text-4xl font-light">
               Communities Create Impact
             </h3>
@@ -91,7 +139,23 @@ export function ValuesSection() {
             </p>
           </div>
 
-          <div className="rounded-3xl border border-[var(--border)] bg-[var(--surface)] p-10">
+          <div
+            className="
+            rounded-3xl
+            border
+            border-[var(--border)]
+            bg-[var(--surface)]
+            p-10
+            transition-all
+            duration-300
+            hover:-translate-y-2
+            hover:border-[var(--accent)]
+            "
+          >
+            <p className="mb-4 font-[var(--font-cormorant)] text-xl text-[var(--accent)]">
+              04
+            </p>
+
             <h3 className="mb-6 font-[var(--font-cormorant)] text-4xl font-light">
               Think Long-Term
             </h3>

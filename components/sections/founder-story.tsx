@@ -82,11 +82,12 @@ export function FounderStory() {
             <Reveal delay={0.1}>
               <div
                 className="
+                  group
                   relative
                   pl-10
                   transition-all
-                  duration-500
-                  hover:translate-x-2
+                  duration-300
+                  hover:translate-x-1
                 "
               >
                 <div
@@ -100,6 +101,8 @@ export function FounderStory() {
                     border-2
                     border-[var(--accent)]
                     bg-[var(--bg)]
+                    transition-transform
+                    group-hover:scale-110
                   "
                 />
                 <h3
@@ -134,11 +137,12 @@ export function FounderStory() {
             <Reveal delay={0.2}>
               <div
                 className="
+                  group
                   relative
                   pl-10
                   transition-all
-                  duration-500
-                  hover:translate-x-2
+                  duration-300
+                  hover:translate-x-1
                 "
               >
                 <div
@@ -152,6 +156,8 @@ export function FounderStory() {
                     border-2
                     border-[var(--accent)]
                     bg-[var(--bg)]
+                    transition-transform
+                    group-hover:scale-110
                   "
                 />
                 <h3
@@ -186,11 +192,12 @@ export function FounderStory() {
             <Reveal delay={0.3}>
               <div
                 className="
+                  group
                   relative
                   pl-10
                   transition-all
-                  duration-500
-                  hover:translate-x-2
+                  duration-300
+                  hover:translate-x-1
                 "
               >
                 <div
@@ -204,6 +211,8 @@ export function FounderStory() {
                     border-2
                     border-[var(--accent)]
                     bg-[var(--bg)]
+                    transition-transform
+                    group-hover:scale-110
                   "
                 />
                 <h3
@@ -238,11 +247,12 @@ export function FounderStory() {
             <Reveal delay={0.4}>
               <div
                 className="
+                  group
                   relative
                   pl-10
                   transition-all
-                  duration-500
-                  hover:translate-x-2
+                  duration-300
+                  hover:translate-x-1
                 "
               >
                 <div
@@ -256,6 +266,8 @@ export function FounderStory() {
                     border-2
                     border-[var(--accent)]
                     bg-[var(--bg)]
+                    transition-transform
+                    group-hover:scale-110
                   "
                 />
                 <h3
@@ -298,8 +310,8 @@ export function FounderStory() {
                   border-[var(--accent)]
                   pl-8
                   transition-all
-                  duration-500
-                  hover:border-[var(--accent)]
+                  duration-300
+                  hover:pl-10
                 "
               >
                 <p

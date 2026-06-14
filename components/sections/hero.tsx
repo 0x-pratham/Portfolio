@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import { Magnetic } from "@/components/shared/magnetic";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -32,10 +32,10 @@ const headlineWord = {
 };
 
 const roles = [
-  "Software Engineering",
-  "Cybersecurity",
-  "Entrepreneurship",
-  "Community Leadership",
+  "building products",
+  "solving security problems",
+  "growing communities",
+  "exploring research",
 ];
 
 export function Hero() {
@@ -44,12 +44,11 @@ export function Hero() {
   useEffect(() => {
     const interval = setInterval(() => {
       setRoleIndex((prev) => (prev + 1) % roles.length);
-    }, 2500);
+    }, 3500);
 
     return () => clearInterval(interval);
   }, []);
 
-  // Portrait Parallax logic
   const { scrollY } = useScroll();
   const imageY = useTransform(scrollY, [0, 800], [0, -120]);
 
@@ -59,12 +58,20 @@ export function Hero() {
         relative
         min-h-screen
         flex
-        items-center
+        flex-col
+        justify-center
         pt-32
         pb-24
       "
     >
-      <div className="container-custom relative z-10">
+      <div 
+        className="absolute inset-0 pointer-events-none" 
+        style={{
+          background: "radial-gradient(circle at 20% 20%, rgba(139,92,246,0.08), transparent 50%)"
+        }}
+      />
+
+      <div className="container-custom relative z-10 w-full">
         <div
           className="
             grid
@@ -89,7 +96,7 @@ export function Hero() {
           >
             <p
               className="
-                mb-8
+                mb-10
                 text-sm
                 uppercase
                 tracking-[0.45em]
@@ -104,17 +111,17 @@ export function Hero() {
               initial="hidden"
               animate="show"
               className="
-                mb-8
+                mb-12
                 max-w-4xl
                 text-6xl
                 font-light
-                leading-[0.92]
-                md:text-7xl
+                leading-[1.1]
+                md:text-8xl
               "
             >
-              {"Prathamesh Bhil".split(" ").map((word) => (
+              {"Hi, I'm Prathamesh.".split(" ").map((word, i) => (
                 <motion.span
-                  key={word}
+                  key={`${word}-${i}`}
                   variants={headlineWord}
                   className="mr-4 inline-block"
                 >
@@ -123,7 +130,6 @@ export function Hero() {
               ))}
             </motion.h1>
 
-            {/* Humanized UI/UX Shift: Roles integrated organically inside the main copy */}
             <div
               className="
                 mb-10
@@ -167,7 +173,6 @@ export function Hero() {
               </span>
             </div>
 
-            {/* Action Buttons: View Projects & Explore Cosmolix */}
             <div
               className="
                 flex
@@ -180,6 +185,7 @@ export function Hero() {
                 <Link
                   href="/projects"
                   className="
+                    group
                     flex
                     items-center
                     gap-2
@@ -196,7 +202,7 @@ export function Hero() {
                   "
                 >
                   View Projects
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
                 </Link>
               </Magnetic>
 
@@ -226,35 +232,49 @@ export function Hero() {
                 </Link>
               </Magnetic>
             </div>
+
+            <div className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs uppercase tracking-widest text-muted">
+              <span className="flex items-center gap-2">
+                <span className="text-[var(--accent)] text-[8px]">●</span> Founder of Cosmolix
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-[var(--accent)] text-[8px]">●</span> Founder of GenXCode
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-[var(--accent)] text-[8px]">●</span> Cybersecurity Researcher
+              </span>
+              <span className="flex items-center gap-2">
+                <span className="text-[var(--accent)] text-[8px]">●</span> Community Builder
+              </span>
+            </div>
           </motion.div>
 
           {/* RIGHT */}
           <motion.div
             initial={{
               opacity: 0,
-              scale: 0.9,
+              clipPath: "inset(0 100% 0 0)",
             }}
             animate={{
               opacity: 1,
-              scale: 1,
+              clipPath: "inset(0 0% 0 0)",
             }}
             transition={{
-              duration: 0.7,
+              duration: 0.9,
+              ease: [0.16, 1, 0.3, 1],
             }}
             style={{
               y: imageY,
             }}
             whileHover={{
-              rotateY: 4,
-              rotateX: -4,
-              scale: 1.03,
+              y: -4,
+              scale: 1.01,
             }}
             className="
               relative
               flex
               justify-center
               will-change-transform
-              cursor-pointer
             "
           >
             <div
@@ -266,23 +286,69 @@ export function Hero() {
                 border-[var(--border)]
                 bg-[var(--surface)]
                 p-6
+                shadow-[0_30px_80px_rgba(0,0,0,0.25)]
+                transition-all
+                duration-500
+                hover:border-[var(--accent)]
               "
             >
-              <Image
-                src="/images/prathamesh-hero.png"
-                alt="Prathamesh Bhil Founder and CEO"
-                width={420}
-                height={520}
-                priority
-                className="
-                  relative
-                  z-10
-                  object-contain
-                "
+              {/* Ambient Backdrop Glow Behind the PNG */}
+              <div 
+                className="absolute inset-0 pointer-events-none z-0 opacity-40 transition-opacity duration-500 group-hover:opacity-60"
+                style={{
+                  background: "radial-gradient(circle at 50% 55%, rgba(139,92,246,0.2), transparent 60%)"
+                }}
               />
+
+              {/* Minimal Engineering Matrix Grid Overlay */}
+              <div 
+                className="absolute inset-0 pointer-events-none z-0 opacity-[0.03] mix-blend-overlay"
+                style={{
+                  backgroundImage: `linear-gradient(to right, var(--border) 1px, transparent 1px), linear-gradient(to bottom, var(--border) 1px, transparent 1px)`,
+                  backgroundSize: "24px 24px"
+                }}
+              />
+
+              {/* FIX: Mask Container with Blur to smoothly transition the image's bottom boundary */}
+              <div className="relative z-10 [mask-image:linear-gradient(to_bottom,black_75%,transparent_100%)]">
+                <Image
+                  src="/images/prathamesh-hero.png"
+                  alt="Prathamesh Bhil Founder and CEO"
+                  width={420}
+                  height={520}
+                  priority
+                  className="relative object-contain"
+                />
+                
+                {/* Backdrop blur element positioning at the bottom edge cut-off area */}
+                <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-[var(--surface)] to-transparent backdrop-blur-[2px] pointer-events-none" />
+              </div>
+
+              {/* Floating Minimal Tech Badge */}
+              <div className="absolute bottom-4 right-4 z-20 hidden sm:flex items-center gap-2 rounded-full border border-[var(--border)]/80 bg-black/40 backdrop-blur-md px-3 py-1.5 text-[10px] uppercase tracking-widest text-[var(--warm-grey)] font-mono shadow-sm">
+                <span className="h-1.5 w-1.5 rounded-full bg-[var(--accent)] animate-pulse" />
+                @prathamesh - Cyb. Prof
+              </div>
             </div>
           </motion.div>
         </div>
+      </div>
+
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 hidden md:flex flex-col items-center gap-3 opacity-50 hover:opacity-100 transition-opacity duration-300">
+        <span className="text-[10px] uppercase tracking-[0.3em] text-muted font-mono">Scroll to Explore</span>
+        <motion.div
+          animate={{
+            y: [0, 6, 0],
+          }}
+          transition={{
+            duration: 1.5,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+          className="text-muted"
+        >
+          <ChevronDown size={18} />
+        </motion.div>
       </div>
     </section>
   );

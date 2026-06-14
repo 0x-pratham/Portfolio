@@ -1,3 +1,7 @@
+"use client";
+
+import { Reveal } from "../shared/reveal";
+
 export function CosmolixSection() {
   return (
     <section className="section-padding">
@@ -6,29 +10,33 @@ export function CosmolixSection() {
         {/* Header */}
 
         <div className="max-w-4xl">
-          <p
-            className="
-            mb-4
-            text-sm
-            uppercase
-            tracking-[0.35em]
-            text-[var(--accent)]
-            "
-          >
-            Cosmolix
-          </p>
+          <Reveal>
+            <p
+              className="
+              mb-4
+              text-sm
+              uppercase
+              tracking-[0.35em]
+              text-[var(--accent)]
+              "
+            >
+              Cosmolix
+            </p>
+          </Reveal>
 
-          <h2
-            className="
-            font-[var(--font-cormorant)]
-            text-5xl
-            font-light
-            leading-[1]
-            md:text-7xl
-            "
-          >
-            The Vision Behind Cosmolix.
-          </h2>
+          <Reveal delay={0.1}>
+            <h2
+              className="
+              font-[var(--font-cormorant)]
+              text-5xl
+              font-light
+              leading-[1]
+              md:text-7xl
+              "
+            >
+              The Vision Behind Cosmolix.
+            </h2>
+          </Reveal>
         </div>
 
         {/* Content */}
@@ -45,7 +53,6 @@ export function CosmolixSection() {
           {/* Story */}
 
           <div>
-
             <p
               className="
               text-lg
@@ -56,20 +63,20 @@ export function CosmolixSection() {
               Cosmolix was never created with the
               intention of becoming just another
               software company.
-
+              <br /><br />
               It was born from a belief that
               technology should create
               opportunities.
-
+              <br /><br />
               Throughout my journey, I witnessed
               talented individuals struggle because
               they lacked guidance, industry
               exposure, and access to meaningful
               opportunities.
-
+              <br /><br />
               I realized that technology alone was
               not enough.
-
+              <br /><br />
               What people truly needed was an
               ecosystem that combined learning,
               innovation, entrepreneurship, and
@@ -86,7 +93,7 @@ export function CosmolixSection() {
             >
               Cosmolix became the foundation for
               building that ecosystem.
-
+              <br /><br />
               Through software solutions,
               communities, educational initiatives,
               and future ventures, the goal is to
@@ -111,7 +118,6 @@ export function CosmolixSection() {
               chapter in a much larger vision that
               continues to evolve every day.
             </p>
-
           </div>
 
           {/* Principles Card */}
@@ -124,6 +130,8 @@ export function CosmolixSection() {
             border-[var(--border)]
             bg-[var(--surface)]
             p-8
+            lg:sticky
+            lg:top-24
             "
           >
 
@@ -141,7 +149,16 @@ export function CosmolixSection() {
 
             <div className="space-y-8">
 
-              <div>
+              <div
+                className="
+                border-b
+                border-[var(--border)]
+                pb-6
+                transition-all
+                duration-300
+                hover:translate-x-1
+                "
+              >
                 <h3 className="mb-2 text-xl">
                   Innovation
                 </h3>
@@ -152,7 +169,16 @@ export function CosmolixSection() {
                 </p>
               </div>
 
-              <div>
+              <div
+                className="
+                border-b
+                border-[var(--border)]
+                pb-6
+                transition-all
+                duration-300
+                hover:translate-x-1
+                "
+              >
                 <h3 className="mb-2 text-xl">
                   Entrepreneurship
                 </h3>
@@ -164,7 +190,16 @@ export function CosmolixSection() {
                 </p>
               </div>
 
-              <div>
+              <div
+                className="
+                border-b
+                border-[var(--border)]
+                pb-6
+                transition-all
+                duration-300
+                hover:translate-x-1
+                "
+              >
                 <h3 className="mb-2 text-xl">
                   Community
                 </h3>
@@ -175,7 +210,13 @@ export function CosmolixSection() {
                 </p>
               </div>
 
-              <div>
+              <div
+                className="
+                transition-all
+                duration-300
+                hover:translate-x-1
+                "
+              >
                 <h3 className="mb-2 text-xl">
                   Impact
                 </h3>
